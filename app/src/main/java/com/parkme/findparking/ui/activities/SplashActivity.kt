@@ -4,8 +4,13 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import com.parkme.findparking.R
 import com.parkme.findparking.databinding.ActivitySplashBinding
+import com.parkme.findparking.utils.startActivity
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
@@ -18,10 +23,14 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun inIt() {
-        setOnClickListener()
+        setUpSplash()
     }
 
-    private fun setOnClickListener() {
-
+    private fun setUpSplash() {
+        lifecycleScope.launch(Dispatchers.IO) {
+            delay(1200)
+            startActivity(BeforeAuthActivity::class.java)
+            finish()
+        }
     }
 }

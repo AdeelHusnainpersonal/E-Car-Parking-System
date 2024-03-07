@@ -78,4 +78,7 @@ dependencies {
 
     //Image picker
     implementation(libs.imagepicker)
+
+    //lottie
+    implementation(libs.lottie)
 }

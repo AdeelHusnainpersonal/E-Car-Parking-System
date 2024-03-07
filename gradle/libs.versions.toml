@@ -11,6 +11,7 @@ espressoCore = "3.5.1"
 appcompat = "1.6.1"
 kotlinxCoroutinesAndroid = "1.7.3"
 lifecycleVersion = "2.7.0"
+lottie = "6.4.0"
 material = "1.11.0"
 activity = "1.8.2"
 constraintlayout = "2.1.4"
@@ -46,6 +47,7 @@ kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutine
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutinesAndroid" }
 
 #responsivenes
+lottie = { module = "com.airbnb.android:lottie", version.ref = "lottie" }
 sdp-android = { module = "com.intuit.sdp:sdp-android", version.ref = "sdpAndroid" }
 ssp-android = { module = "com.intuit.ssp:ssp-android", version.ref = "sspAndroid" }
 

@@ -2,23 +2,21 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/color_background"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingHorizontal="@dimen/_20sdp"
-    tools:context=".ui.activities.SplashActivity">
+    tools:context=".ui.activities.BeforeAuthActivity">
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_200sdp"
-        android:scaleType="centerCrop"
-        app:lottie_loop="true"
-        app:lottie_autoPlay="true"
-        app:lottie_rawRes="@raw/anim_car_running"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_host_fragment_container"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/nav_before_auth" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
