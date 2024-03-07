@@ -22,5 +22,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "ParkMe"
+rootProject.name = "E Car Parking System"
 include(":app")
