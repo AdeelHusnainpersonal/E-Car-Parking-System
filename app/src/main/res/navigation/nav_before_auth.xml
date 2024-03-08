@@ -13,14 +13,35 @@
         <action
             android:id="@+id/action_welcomeFragment_to_loginFragment"
             app:destination="@id/loginFragment"
+            app:enterAnim="@anim/slide_in"
             app:exitAnim="@anim/fade_out"
             app:popEnterAnim="@anim/fade_in"
-            app:enterAnim="@anim/slide_in"
-            app:popExitAnim="@anim/slide_out" />
+            app:popExitAnim="@anim/slide_out"
+            app:popUpTo="@id/welcomeFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.parkme.findparking.ui.fragments.auth.LoginFragment"
+        android:name="com.parkme.findparking.ui.fragments.auth.login.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login"
+        >
+        <action
+            android:id="@+id/action_loginFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.parkme.findparking.ui.fragments.auth.signup.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_fillProfileFragment"
+            app:destination="@id/fillInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fillInfoFragment"
+        android:name="com.parkme.findparking.ui.fragments.auth.fillprofile.FillProfileFragment"
+        android:label="fragment_fill_profile"
+        tools:layout="@layout/fragment_fill_profile" />
 </navigation>

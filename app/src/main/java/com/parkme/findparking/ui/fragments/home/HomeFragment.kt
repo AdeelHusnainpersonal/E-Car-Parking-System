@@ -1,20 +1,19 @@
-package com.parkme.findparking.ui.fragments.auth
+package com.parkme.findparking.ui.fragments.home
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
 import com.parkme.findparking.R
-import com.parkme.findparking.databinding.FragmentLoginBinding
+import com.parkme.findparking.databinding.FragmentHomeBinding
 
-class LoginFragment : Fragment() {
-    private var _binding: FragmentLoginBinding? = null
+class HomeFragment : Fragment() {
+    private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        _binding = FragmentLoginBinding.inflate(inflater, container, false)
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
         inIt()
         return binding.root
     }
@@ -24,9 +23,7 @@ class LoginFragment : Fragment() {
     }
 
     private fun setOnClickListener() {
-        binding.btnBack.setOnClickListener {
-            findNavController().popBackStack()
-        }
+
     }
 
     override fun onDestroyView() {

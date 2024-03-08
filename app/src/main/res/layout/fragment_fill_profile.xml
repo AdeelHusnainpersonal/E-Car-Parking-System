@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingTop="@dimen/_32sdp"
+    android:paddingHorizontal="@dimen/_20sdp"
+    android:background="@color/color_background"
+    tools:context=".ui.fragments.auth.fillprofile.FillProfileFragment">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="38dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icon_back" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/medium_dm_sans"
+        android:text="Fill your \nProfile"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_26sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnBack" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etFullName"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_42sdp"
+        android:background="@drawable/bg_edit_text"
+        android:fontFamily="@font/medium_dm_sans"
+        android:hint="Full name"
+        android:inputType="textPersonName"
+        android:maxLines="1"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:paddingHorizontal="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView13" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etNickName"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_42sdp"
+        android:background="@drawable/bg_edit_text"
+        android:fontFamily="@font/medium_dm_sans"
+        android:hint="Nick name  (optional)"
+        android:inputType="textPersonName"
+        android:maxLines="1"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:paddingHorizontal="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etFullName" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etDateOfBirth"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_42sdp"
+        android:background="@drawable/bg_edit_text"
+        android:fontFamily="@font/medium_dm_sans"
+        android:hint="Date of birth"
+        android:drawableEnd="@drawable/icon_calendar"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:inputType="textPersonName"
+        android:maxLines="1"
+        android:cursorVisible="false"
+        android:focusableInTouchMode="false"
+        android:paddingHorizontal="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etNickName" />
+
+    <com.hbb20.CountryCodePicker
+        android:id="@+id/countryCodePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:ccpDialog_fastScroller_bubbleColor="@color/color_primary"
+        android:layout_marginTop="@dimen/_20sdp"
+        app:ccpDialog_textColor="@color/black"
+        app:ccp_arrowColor="@color/black"
+        app:ccp_contentColor="@color/black"
+        app:ccp_autoDetectCountry="true"
+        app:ccp_autoDetectLanguage="true"
+        app:ccp_hintExampleNumber="true"
+        app:ccp_showNameCode="false"
+        app:ccp_showPhoneCode="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etDateOfBirth" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etPhoneNumber"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_42sdp"
+        android:background="@drawable/bg_edit_text"
+        android:fontFamily="@font/medium_dm_sans"
+        android:hint="Phone number"
+        android:inputType="textPersonName"
+        android:maxLines="1"
+        android:paddingHorizontal="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/countryCodePicker"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/countryCodePicker"
+        app:layout_constraintTop_toTopOf="@+id/countryCodePicker" />
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etAddress"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_42sdp"
+        android:background="@drawable/bg_edit_text"
+        android:drawableEnd="@drawable/icon_location"
+        android:fontFamily="@font/medium_dm_sans"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:hint="Address"
+        android:inputType="textPersonName"
+        android:maxLines="1"
+        android:paddingHorizontal="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etPhoneNumber" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnContinue"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_38sdp"
+        android:background="@drawable/bg_btn"
+        android:backgroundTint="@color/color_primary"
+        android:fontFamily="@font/bold_dm_sans"
+        android:text="Continue"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:textColor="@color/white"
+        android:textSize="19sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etAddress" />
+</androidx.constraintlayout.widget.ConstraintLayout>

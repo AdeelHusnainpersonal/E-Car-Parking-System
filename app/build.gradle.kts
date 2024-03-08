@@ -81,4 +81,7 @@ dependencies {
 
     //lottie
     implementation(libs.lottie)
+
+    //ccp
+    implementation(libs.hbb20.ccp)
 }
