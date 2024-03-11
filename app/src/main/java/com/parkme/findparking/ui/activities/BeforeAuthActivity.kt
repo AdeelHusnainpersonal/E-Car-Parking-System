@@ -7,7 +7,9 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.parkme.findparking.R
 import com.parkme.findparking.databinding.ActivityBeforeAuthBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class BeforeAuthActivity : AppCompatActivity() {
     private lateinit var binding: ActivityBeforeAuthBinding
         override fun onCreate(savedInstanceState: Bundle?) {

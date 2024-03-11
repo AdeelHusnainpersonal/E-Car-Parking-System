@@ -9,8 +9,11 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.parkme.findparking.R
 import com.parkme.findparking.databinding.FragmentSignUpBinding
+import com.parkme.findparking.utils.Constants
 import com.parkme.findparking.utils.toast
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SignUpFragment : Fragment() {
     private var _binding: FragmentSignUpBinding? = null
     private val binding get() = _binding!!
@@ -34,7 +37,12 @@ class SignUpFragment : Fragment() {
         }
         binding.btnSignup.setOnClickListener {
             if (isValid()){
-                findNavController().navigate(R.id.action_signUpFragment_to_fillProfileFragment)
+                val bundle = Bundle()
+                bundle.apply {
+                    putString(Constants.KEY_EMAIL,binding.etEmail.text.toString().trim())
+                    putString(Constants.KEY_PASSWORD,binding.etPassword.text.toString().trim())
+                }
+                findNavController().navigate(R.id.action_signUpFragment_to_fillProfileFragment,bundle)
             }
         }
     }

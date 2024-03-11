@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.parkme.findparking" />
+                  <option name="mobileSdkAppId" value="1:260368778390:android:9756d57b8998361d606eb7" />
+                  <option name="projectId" value="e-car-parking-system" />
+                  <option name="projectNumber" value="260368778390" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

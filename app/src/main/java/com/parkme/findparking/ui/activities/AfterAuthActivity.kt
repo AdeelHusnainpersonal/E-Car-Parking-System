@@ -14,7 +14,9 @@ import com.parkme.findparking.ui.fragments.home.HomeFragment
 import com.parkme.findparking.utils.BackPressedUtils.goBackPressed
 import com.parkme.findparking.utils.gone
 import com.parkme.findparking.utils.visible
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class AfterAuthActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAfterAuthBinding
     private lateinit var navHostFragment: Fragment
