@@ -15,6 +15,7 @@ import com.parkme.findparking.ui.activities.AfterAuthActivity
 import com.parkme.findparking.ui.fragments.auth.VmAuth
 import com.parkme.findparking.utils.BackPressedUtils.goBackPressed
 import com.parkme.findparking.utils.DataState
+import com.parkme.findparking.utils.EditTextUtils
 import com.parkme.findparking.utils.ProgressDialogUtil.dismissProgressDialog
 import com.parkme.findparking.utils.ProgressDialogUtil.showProgressDialog
 import com.parkme.findparking.utils.startActivity
@@ -43,6 +44,7 @@ class LoginFragment : Fragment() {
         setOnClickListener()
         backPressed()
         setupObserver()
+        setUpUi()
     }
 
     private fun setOnClickListener() {
@@ -85,6 +87,10 @@ class LoginFragment : Fragment() {
             }
         }
 
+    }
+
+    private fun setUpUi(){
+        EditTextUtils.setPasswordVisibilityToggle(binding.etPassword)
     }
 
     private fun backPressed() {

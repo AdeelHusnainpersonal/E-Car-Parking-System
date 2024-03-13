@@ -48,7 +48,6 @@
         android:background="@drawable/bg_edit_text"
         android:fontFamily="@font/medium_dm_sans"
         android:layout_marginTop="@dimen/_5sdp"
-        android:hint="testemail@gmail.com"
         android:inputType="textEmailAddress"
         android:maxLines="1"
         android:paddingHorizontal="15dp"
@@ -76,7 +75,6 @@
         android:layout_marginTop="@dimen/_5sdp"
         android:drawableEnd="@drawable/icon_password_visibility_on"
         android:fontFamily="@font/medium_dm_sans"
-        android:hint="nzay75ny"
         android:inputType="textPassword"
         android:maxLines="1"
         android:paddingHorizontal="15dp"
@@ -128,7 +126,7 @@
         android:layout_marginTop="@dimen/_20sdp"
         android:text="Don't have an account?"
         android:textColor="@color/black"
-        android:textSize="@dimen/_12ssp"
+        android:textSize="@dimen/_13ssp"
         app:layout_constraintStart_toStartOf="@+id/btnLogin"
         app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
 
@@ -140,7 +138,7 @@
         android:fontFamily="@font/regular_dm_sans"
         android:text="Signup"
         android:textColor="@color/color_primary"
-        android:textSize="@dimen/_12ssp"
+        android:textSize="@dimen/_13ssp"
         app:layout_constraintBottom_toBottomOf="@+id/appCompatTextView16"
         app:layout_constraintStart_toEndOf="@+id/appCompatTextView16"
         app:layout_constraintTop_toTopOf="@+id/appCompatTextView16" />

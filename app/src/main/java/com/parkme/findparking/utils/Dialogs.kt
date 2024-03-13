@@ -2,29 +2,72 @@ package com.parkme.findparking.utils
 
 import android.app.AlertDialog
 import android.app.DatePickerDialog
+import android.app.Dialog
 import android.content.Context
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
+import android.view.LayoutInflater
+import android.view.Window
+import android.view.WindowManager
+import com.parkme.findparking.databinding.DialogAddCarBinding
+import com.parkme.findparking.databinding.DialogLogoutLayoutBinding
 import java.util.Calendar
 import java.util.Date
 
 object Dialogs {
 
-//    fun showProfileDoneDialog(
-//        context: Context,
-//        inflater: LayoutInflater,
-//        setProfileImgCallback:() -> Unit
-//    ) {
-//        val dialog = Dialog(context)
-//        val binding = LayoutCustomDialogProfileDoneBinding.inflate(inflater, null, false)
-//        dialog.apply {
-//            setContentView(binding.root)
-//            setCancelable(true)
-//            window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-//            binding.profileDoneDialogImageView.setOnClickListener {
-//                setProfileImgCallback.invoke()
-//            }
-//            show()
-//        }
-//    }
+    fun logOutDialog(
+        context: Context,
+        inflater: LayoutInflater,
+        setProfileImgCallback:() -> Unit
+    ) {
+        val dialog = Dialog(context)
+        val binding = DialogLogoutLayoutBinding.inflate(inflater, null, false)
+        dialog.apply {
+            setContentView(binding.root)
+            setCancelable(true)
+
+            window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+            binding.btnYes.setOnClickListener {
+                setProfileImgCallback.invoke()
+                dismiss()
+            }
+
+            binding.btnNo.setOnClickListener {
+                dismiss()
+            }
+            show()
+        }
+    }
+
+    fun addCarDialog(
+        context: Context,
+        inflater: LayoutInflater,
+        carInfo:(String,String) -> Unit
+    ) {
+        val dialog = Dialog(context)
+        val binding = DialogAddCarBinding.inflate(inflater, null, false)
+
+        dialog.apply {
+            setContentView(binding.root)
+            setCancelable(false)
+
+            window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            binding.btnAdd.setOnClickListener {
+                val carName = binding.etCarName.text.toString().trim()
+                val carNumber = binding.etCarNumber.text.toString().trim()
+                carInfo.invoke(carName,carNumber)
+                dismiss()
+            }
+
+            binding.btnCancel.setOnClickListener {
+                dismiss()
+            }
+
+            show()
+        }
+    }
 
     inline fun permissionAlertDialog(context: Context,message:String,crossinline callback:() -> Unit) {
         val builder = AlertDialog.Builder(context)

@@ -18,5 +18,26 @@
         android:id="@+id/profileFragment"
         android:name="com.parkme.findparking.ui.fragments.profile.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment"
+            app:enterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out" />
+        <action
+            android:id="@+id/action_profileFragment_to_myCarsFragment"
+            app:destination="@id/myCarsFragment"
+            app:enterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.parkme.findparking.ui.fragments.profile.editprofile.EditProfileFragment"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile" />
+    <fragment
+        android:id="@+id/myCarsFragment"
+        android:name="com.parkme.findparking.ui.fragments.profile.mycars.MyCarsFragment"
+        android:label="fragment_my_cars"
+        tools:layout="@layout/fragment_my_cars" />
 </navigation>

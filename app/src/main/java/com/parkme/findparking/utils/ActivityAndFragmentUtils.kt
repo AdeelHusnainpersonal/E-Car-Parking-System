@@ -13,8 +13,8 @@ fun View.visible() {
     visibility = View.VISIBLE
 }
 
-fun String.wrapWithParentheses(): String {
-    return "($this)"
+fun String.withHi(): String {
+    return "Hi, $this!"
 }
 
 fun View.gone() {

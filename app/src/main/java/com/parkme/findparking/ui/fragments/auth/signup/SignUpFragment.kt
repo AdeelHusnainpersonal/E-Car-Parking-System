@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import com.parkme.findparking.R
 import com.parkme.findparking.databinding.FragmentSignUpBinding
 import com.parkme.findparking.utils.Constants
+import com.parkme.findparking.utils.EditTextUtils
 import com.parkme.findparking.utils.toast
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -26,6 +27,7 @@ class SignUpFragment : Fragment() {
 
     private fun inIt() {
         setOnClickListener()
+        setUpUi()
     }
 
     private fun setOnClickListener() {
@@ -45,6 +47,10 @@ class SignUpFragment : Fragment() {
                 findNavController().navigate(R.id.action_signUpFragment_to_fillProfileFragment,bundle)
             }
         }
+    }
+
+    private fun setUpUi(){
+        EditTextUtils.setPasswordVisibilityToggle(binding.etPassword)
     }
 
     private fun isValid():Boolean{

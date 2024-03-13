@@ -7,7 +7,9 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.toObject
 import com.parkme.findparking.data.ModelUser
+import com.parkme.findparking.preferences.PreferenceManager
 import com.parkme.findparking.utils.DataState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -17,7 +19,8 @@ import javax.inject.Inject
 @HiltViewModel
 class VmAuth @Inject constructor(
     private val auth: FirebaseAuth,
-    private val db: FirebaseFirestore
+    private val db: FirebaseFirestore,
+    private val preferenceManager: PreferenceManager
 ) : ViewModel() {
 
     private val _signUpStatus = MutableLiveData<DataState<Nothing>>()
@@ -44,7 +47,7 @@ class VmAuth @Inject constructor(
     private fun addUserToDb(user: ModelUser) {
         db.collection("users").document(auth.currentUser?.uid!!).set(user)
             .addOnSuccessListener {
-                _signUpStatus.value = DataState.Success()
+                getUserFromDbAndSave()
             }
             .addOnFailureListener {
                 _signUpStatus.value = DataState.Error(it.message!!)
@@ -55,7 +58,7 @@ class VmAuth @Inject constructor(
         withContext(Dispatchers.Main) { _loginStatus.value = DataState.Loading }
         auth.signInWithEmailAndPassword(email, password)
             .addOnSuccessListener {
-                _loginStatus.value = DataState.Success()
+                getUserFromDbAndSave()
             }
             .addOnFailureListener { exception ->
                 if (exception is FirebaseAuthInvalidCredentialsException) {
@@ -63,6 +66,23 @@ class VmAuth @Inject constructor(
                 } else {
                     _loginStatus.value = DataState.Error("Authentication failed.")
                 }
+            }
+    }
+
+    private fun getUserFromDbAndSave(){
+        db.collection("users").document(auth.currentUser?.uid!!)
+            .get()
+            .addOnSuccessListener {
+                val user = it.toObject<ModelUser>()
+                if (user != null){
+                    preferenceManager.saveUserData(user)
+                    _signUpStatus.value = DataState.Success()
+                    _loginStatus.value = DataState.Success()
+                }
+            }
+            .addOnFailureListener {
+                _signUpStatus.value = DataState.Error(it.message!!)
+                _loginStatus.value = DataState.Error(it.message!!)
             }
     }
 }
