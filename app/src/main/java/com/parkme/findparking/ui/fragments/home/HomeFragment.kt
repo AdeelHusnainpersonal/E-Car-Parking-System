@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.parkme.findparking.R
+import com.parkme.findparking.data.ModelParking
 import com.parkme.findparking.databinding.FragmentHomeBinding
 import com.parkme.findparking.preferences.PreferenceManager
 import com.parkme.findparking.utils.withHi
@@ -27,6 +28,69 @@ class HomeFragment : Fragment() {
     private fun inIt() {
         setOnClickListener()
         setUserName()
+        setUpAdapter()
+    }
+
+    private fun setUpAdapter() {
+        val listOfParking = arrayListOf(
+            ModelParking(
+                R.drawable.img_parking_area,
+                "SecurePark Hub",
+                "New York, USA",
+                "Rs 300/hr",
+                "22 Spots"
+            ),
+            ModelParking(
+                R.drawable.img_parking_area,
+                "SecurePark Hub",
+                "New York, USA",
+                "Rs 300/hr",
+                "22 Spots"
+            ),
+            ModelParking(
+                R.drawable.img_parking_area,
+                "SecurePark Hub",
+                "New York, USA",
+                "Rs 300/hr",
+                "22 Spots"
+            ),
+            ModelParking(
+                R.drawable.img_parking_area,
+                "SecurePark Hub",
+                "New York, USA",
+                "Rs 300/hr",
+                "22 Spots"
+            ),
+            ModelParking(
+                R.drawable.img_parking_area,
+                "SecurePark Hub",
+                "New York, USA",
+                "Rs 300/hr",
+                "22 Spots"
+            ),
+            ModelParking(
+                R.drawable.img_parking_area,
+                "SecurePark Hub",
+                "New York, USA",
+                "Rs 300/hr",
+                "22 Spots"
+            ),
+            ModelParking(
+                R.drawable.img_parking_area,
+                "SecurePark Hub",
+                "New York, USA",
+                "Rs 300/hr",
+                "22 Spots"
+            ),
+            ModelParking(
+                R.drawable.img_parking_area,
+                "SecurePark Hub",
+                "New York, USA",
+                "Rs 300/hr",
+                "22 Spots"
+            ),
+        )
+        binding.rvParking.adapter = AdapterParking(listOfParking)
     }
 
     private fun setOnClickListener() {

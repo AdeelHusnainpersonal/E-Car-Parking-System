@@ -11,8 +11,8 @@
     <com.airbnb.lottie.LottieAnimationView
         android:layout_width="match_parent"
         android:layout_height="@dimen/_200sdp"
-        android:scaleType="centerCrop"
         app:lottie_loop="true"
+        android:scaleType="centerCrop"
         app:lottie_autoPlay="true"
         app:lottie_rawRes="@raw/anim_car_running"
         app:layout_constraintBottom_toBottomOf="parent"

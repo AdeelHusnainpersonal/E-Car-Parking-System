@@ -54,11 +54,32 @@ object Dialogs {
             setCancelable(false)
 
             window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            val carName = binding.etCarName
+            val carNumber = binding.etCarNumber
+            fun validate(): Boolean {
+                return when {
+                    carName.text.isNullOrEmpty() -> {
+                        carName.error = "Can't be empty!"
+                        carName.requestFocus()
+                        false
+                    }
+
+                    carNumber.text.isNullOrEmpty() -> {
+                        carNumber.error = "Can't be empty!"
+                        carNumber.requestFocus()
+                        false
+                    }
+
+                    else -> {
+                        true
+                    }
+                }
+            }
             binding.btnAdd.setOnClickListener {
-                val carName = binding.etCarName.text.toString().trim()
-                val carNumber = binding.etCarNumber.text.toString().trim()
-                carInfo.invoke(carName,carNumber)
-                dismiss()
+                if (validate()) {
+                    carInfo.invoke(carName.text.toString().trim(), carNumber.text.toString().trim())
+                    dismiss()
+                }
             }
 
             binding.btnCancel.setOnClickListener {
