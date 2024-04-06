@@ -19,6 +19,7 @@
         <activity
             android:name=".ui.activities.AfterAuthActivity"
             android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustNothing"
             android:exported="false" />
         <activity
             android:name=".ui.activities.BeforeAuthActivity"

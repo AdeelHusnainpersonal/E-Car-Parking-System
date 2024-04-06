@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/spotCard"
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="3dp"
+    android:layout_margin="@dimen/_5sdp"
+    app:cardBackgroundColor="@color/color_spot_unbooked">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvSpotName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="A30"
+        android:layout_gravity="center"
+        android:fontFamily="@font/bold_dm_sans"
+        android:textSize="@dimen/_20ssp"
+        android:textColor="@color/white" />
+</androidx.cardview.widget.CardView>

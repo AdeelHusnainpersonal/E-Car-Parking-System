@@ -117,7 +117,6 @@
         android:layout_width="0dp"
         android:layout_height="@dimen/_42sdp"
         android:background="@drawable/bg_edit_text"
-        android:drawableEnd="@drawable/icon_location"
         android:fontFamily="@font/medium_dm_sans"
         android:layout_marginTop="@dimen/_15sdp"
         android:hint="Address"

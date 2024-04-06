@@ -8,7 +8,13 @@
         android:id="@+id/homeFragment"
         android:name="com.parkme.findparking.ui.fragments.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_spotsFragment"
+            app:destination="@id/spotsFragment"
+            app:enterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out" />
+    </fragment>
     <fragment
         android:id="@+id/bookingsFragment"
         android:name="com.parkme.findparking.ui.fragments.bookings.BookingsFragment"
@@ -40,4 +46,26 @@
         android:name="com.parkme.findparking.ui.fragments.profile.mycars.MyCarsFragment"
         android:label="fragment_my_cars"
         tools:layout="@layout/fragment_my_cars" />
+    <fragment
+        android:id="@+id/spotsFragment"
+        android:name="com.parkme.findparking.ui.fragments.spots.SpotsFragment"
+        android:label="fragment_spots"
+        tools:layout="@layout/fragment_spots">
+        <action
+            android:id="@+id/action_spotsFragment_to_bookingFragment"
+            app:destination="@id/bookingFragment"
+            app:enterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookingFragment"
+        android:name="com.parkme.findparking.ui.fragments.booking.BookingFragment"
+        android:label="fragment_booking"
+        tools:layout="@layout/fragment_booking">
+        <action
+            android:id="@+id/action_bookingFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out" />
+    </fragment>
 </navigation>

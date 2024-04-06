@@ -4,6 +4,10 @@ object Constants {
     const val ROOM_DB_NAME = "roomDb"
     const val KEY_EMAIL = "userEmail"
     const val KEY_PASSWORD = "userPassword"
+    const val KEY_PARKING_NAME = "parkingName"
+    const val KEY_SPOT_NAME = "spotName"
+    const val KEY_SPACE_LOCATION = "spaceLocation"
+    const val KEY_SPACE_DOCID = "docId"
 
     /*........ Date/Time Format Patterns ........*/
     const val DATE_FORMAT_YYYY_MM_DD = "yyyy-MM-dd" // Four-digit year, two-digit month, and two-digit day (e.g., "2024-01-28").

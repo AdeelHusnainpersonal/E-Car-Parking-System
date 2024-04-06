@@ -17,6 +17,14 @@ fun String.withHi(): String {
     return "Hi, $this!"
 }
 
+fun String.wrapWithRsHr(): String {
+    return "Rs $this/hr"
+}
+
+fun String.wrapWithSpots(): String {
+    return "$this Spots"
+}
+
 fun View.gone() {
     visibility = View.GONE
 }

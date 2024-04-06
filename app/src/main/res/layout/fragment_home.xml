@@ -29,18 +29,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.appcompat.widget.AppCompatEditText
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/etSearch"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_42sdp"
             android:layout_marginHorizontal="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_15sdp"
             android:background="@drawable/bg_edit_text"
             android:drawableStart="@drawable/icon_search"
-            android:drawablePadding="@dimen/_10sdp"
             android:fontFamily="@font/regular_dm_sans"
-            android:hint="Search"
-            android:maxLines="1"
-            android:paddingHorizontal="@dimen/_20sdp"
+            app:queryHint="Search"
+            app:iconifiedByDefault="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvUserName" />

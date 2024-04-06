@@ -45,15 +45,16 @@
         android:id="@+id/etEmail"
         android:layout_width="0dp"
         android:layout_height="@dimen/_42sdp"
+        android:layout_marginTop="@dimen/_5sdp"
         android:background="@drawable/bg_edit_text"
         android:fontFamily="@font/medium_dm_sans"
-        android:layout_marginTop="@dimen/_5sdp"
         android:inputType="textEmailAddress"
         android:maxLines="1"
         android:paddingHorizontal="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView14" />
+        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView14"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/appCompatTextView15"
@@ -71,8 +72,8 @@
         android:id="@+id/etPassword"
         android:layout_width="0dp"
         android:layout_height="@dimen/_42sdp"
-        android:background="@drawable/bg_edit_text"
         android:layout_marginTop="@dimen/_5sdp"
+        android:background="@drawable/bg_edit_text"
         android:drawableEnd="@drawable/icon_password_visibility_on"
         android:fontFamily="@font/medium_dm_sans"
         android:inputType="textPassword"
@@ -80,7 +81,8 @@
         android:paddingHorizontal="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView15" />
+        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView15"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <androidx.appcompat.widget.AppCompatCheckBox
         android:id="@+id/checkBoxRememberMe"

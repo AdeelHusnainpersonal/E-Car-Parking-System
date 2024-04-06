@@ -88,11 +88,14 @@ dependencies {
     implementation(libs.hbb20.ccp)
 
     //Firebase
-    implementation(platform("com.google.firebase:firebase-bom:32.7.4"))
+    implementation(platform("com.google.firebase:firebase-bom:32.8.0"))
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-firestore")
 
     //Gson
     implementation("com.google.code.gson:gson:2.10.1")
+
+    //Countdown timer
+    implementation("com.github.happysingh23828:HappyTimer:1.0.1")
 }
